@@ -1,0 +1,22 @@
+# GitHub Pages configuration
+# Disables Jekyll processing for this static HTML site
+
+# Exclude files from processing
+exclude:
+  - .git
+  - .gitignore  
+  - .nojekyll
+  - README.md
+  - LICENSE
+
+# Don't process any markdown files
+markdown_ext: false
+
+# Prevent Jekyll from processing files
+exclude_from_processing:
+  - .git
+  - .gitignore
+  - .nojekyll
+  - fonts
+  - Logos
+  - README.md

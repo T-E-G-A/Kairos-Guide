@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos Creative Studio — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=array@701,700&display=swap" rel="stylesheet">
+<style>
+
+  @font-face {
+    font-family: 'Array Bold';
+    src: url('fonts/Array-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Array BoldWide';
+    src: url('fonts/Array-BoldWide.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  :root {
+    --focal-deep: #6B4B3E;
+    --focal-tan: #C49E85;
+    --focal-peach: #FFD6AF;
+    --undertone-espresso: #583E33;
+    --undertone-bark: #614438;
+    --undertone-apricot: #FFDAB6;
+    --undertone-cream: #FFDDBD;
+    --undertone-sand: #FFE0C3;
+    --undertone-ivory: #FFE3C8;
+    --undertone-whisper: #FFE6CD;
+    --exposure-rust: #8B3A2A;
+    --exposure-moss: #5C6B3A;
+    --exposure-ochre: #B8860B;
+    --backdrop-white: #FAF7F2;
+    --backdrop-linen: #F0EAE0;
+    --backdrop-sand: #D9CFC0;
+    --backdrop-taupe: #8C7B6B;
+    --backdrop-charcoal: #3D3028;
+    --font-display: 'Array BoldWide', Arial, sans-serif;
+    --font-header: 'Array Bold', Arial, sans-serif;
+    --font-body: 'Consolas', 'Courier New', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--backdrop-white);
+    color: var(--backdrop-charcoal);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--backdrop-white);
+    border-bottom: 1px solid var(--backdrop-sand);
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-header);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: var(--focal-deep);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--backdrop-taupe);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--focal-deep); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 3rem 4rem;
+    background: var(--backdrop-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40vw;
+    height: 40vw;
+    background-image: url('Logos/Logomark.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--focal-tan);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--focal-deep);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-stretch: condensed;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--backdrop-taupe);
+    font-style: italic;
+    margin-bottom: 3rem;
+    max-width: 480px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-meta-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--backdrop-taupe);
+  }
+
+  .hero-meta-value {
+    font-size: 13px;
+    color: var(--focal-deep);
+    font-weight: 700;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 3rem;
+    border-top: 1px solid var(--backdrop-sand);
+  }
+
+  section:nth-child(even) {
+    background: var(--backdrop-linen);
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--focal-tan);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--focal-deep);
+    margin-bottom: 3rem;
+    line-height: 1.1;
+    font-family: var(--font-header);
+  }
+
+  .section-intro {
+    font-size: 17px;
+    color: var(--backdrop-taupe);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    font-style: italic;
+    line-height: 1.8;
+  }
+
+  /* BRAND IDENTITY */
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 3rem;
+  }
+
+  .identity-card {
+    background: var(--backdrop-white);
+    padding: 2.5rem;
+    border: 1px solid var(--backdrop-sand);
+  }
+
+  .identity-card:first-child {
+    background: var(--focal-deep);
+    color: var(--backdrop-white);
+  }
+
+  .identity-card-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--focal-tan);
+    margin-bottom: 1rem;
+  }
+
+  .identity-card:first-child .identity-card-label {
+    color: var(--focal-peach);
+    opacity: 0.7;
+  }
+
+  .identity-card-content {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--backdrop-charcoal);
+  }
+
+  .identity-card:first-child .identity-card-content {
+    color: var(--backdrop-linen);
+  }
+
+  .identity-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--backdrop-white);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-header);
+  }
+
+  .tagline {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-style: italic;
+    color: var(--focal-tan);
+    border-left: 3px solid var(--focal-tan);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    line-height: 1.4;
+  }
+
+  .services-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .service-pill {
+    background: var(--backdrop-linen);
+    border: 1px solid var(--backdrop-sand);
+    padding: 0.5rem 1.25rem;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--focal-deep);
+    font-weight: 700;
+  }
+
+  /* BRAND STORY */
+  .story-text {
+    max-width: 680px;
+  }
+
+  .story-text p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--backdrop-charcoal);
+    margin-bottom: 1.5rem;
+  }
+
+  .story-text p:first-child {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--focal-deep);
+  }
+
+  .story-text p:last-child {
+    font-style: italic;
+    color: var(--focal-tan);
+    font-size: 1.1rem;
+  }
+
+  /* COLOR SYSTEM */
+  .color-class {
+    margin-bottom: 3rem;
+  }
+
+  .color-class-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .color-class-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--focal-deep);
+    letter-spacing: 0.05em;
+  }
+
+  .color-class-desc {
+    font-size: 12px;
+    color: var(--backdrop-taupe);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .color-swatches {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    flex: 1;
+    min-width: 80px;
+    height: 120px;
+    position: relative;
+    cursor: default;
+    transition: flex 0.3s ease;
+  }
+
+  .swatch:hover { flex: 2; }
+
+  .swatch-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+    background: rgba(0,0,0,0.15);
+  }
+
+  .swatch:hover .swatch-info { opacity: 1; }
+
+  .swatch-hex {
+    font-size: 10px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+
+  .swatch-name {
+    font-size: 9px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.05em;
+  }
+
+  /* TYPOGRAPHY */
+  .type-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+  }
+
+  .type-table th {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--backdrop-taupe);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--backdrop-sand);
+    font-weight: 400;
+  }
+
+  .type-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--backdrop-linen);
+    font-size: 14px;
+    color: var(--backdrop-charcoal);
+    vertical-align: middle;
+  }
+
+  .type-table tr:hover td { background: var(--backdrop-linen); }
+
+  .type-preview {
+    color: var(--focal-deep);
+    line-height: 1.2;
+    font-family: var(--font-header);
+  }
+
+  .type-preview.display {
+    font-family: var(--font-display);
+  }
+
+  /* LOGO */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-bottom: 3rem;
+  }
+
+  .logo-card {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border: 1px solid var(--backdrop-sand);
+    background: var(--backdrop-white);
+  }
+
+  .logo-card.dark {
+    background: var(--focal-tan);
+  }
+
+  .logo-card.charcoal {
+    background: var(--backdrop-charcoal);
+  }
+
+  .logo-card-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--backdrop-taupe);
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .logo-card.dark .logo-card-label,
+  .logo-card.charcoal .logo-card-label {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .logo-mark {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo-wordmark {
+    font-family: var(--font-header);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    color: var(--focal-tan);
+  }
+
+  .logo-wordmark.white { color: var(--backdrop-white); }
+  .logo-wordmark.dark { color: var(--focal-deep); }
+
+  .logo-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--focal-tan);
+    font-weight: 400;
+  }
+
+  .logo-sub.white { color: rgba(255,255,255,0.7); }
+
+  /* RULES */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .rules-col h3 {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid;
+  }
+
+  .rules-col.do h3 {
+    color: var(--exposure-moss);
+    border-color: var(--exposure-moss);
+  }
+
+  .rules-col.dont h3 {
+    color: var(--exposure-rust);
+    border-color: var(--exposure-rust);
+  }
+
+  .rules-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .rules-list li {
+    font-size: 14px;
+    color: var(--backdrop-charcoal);
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .rules-col.do .rules-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--exposure-moss);
+    font-weight: 700;
+  }
+
+  .rules-col.dont .rules-list li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--exposure-rust);
+    font-weight: 700;
+  }
+
+  /* VOICE */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .voice-card {
+    background: var(--backdrop-white);
+    border: 1px solid var(--backdrop-sand);
+    padding: 2rem;
+  }
+
+  .voice-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--focal-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .voice-card-content {
+    font-size: 14px;
+    color: var(--backdrop-taupe);
+    line-height: 1.7;
+  }
+
+  .touchpoint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .touchpoint-card {
+    background: var(--backdrop-white);
+    border: 1px solid var(--backdrop-sand);
+    padding: 2rem;
+  }
+
+  .touchpoint-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--focal-tan);
+    margin-bottom: 0.5rem;
+  }
+
+  .touchpoint-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--focal-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .touchpoint-example {
+    font-size: 13px;
+    color: var(--backdrop-taupe);
+    font-style: italic;
+    line-height: 1.7;
+    border-left: 2px solid var(--focal-tan);
+    padding-left: 1rem;
+  }
+
+  /* IMAGERY */
+  .imagery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .imagery-card {
+    border: 1px solid var(--backdrop-sand);
+    overflow: hidden;
+  }
+
+  .imagery-swatch {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imagery-swatch-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.6;
+  }
+
+  .imagery-card-body {
+    padding: 1.25rem;
+    background: var(--backdrop-white);
+  }
+
+  .imagery-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--focal-deep);
+    margin-bottom: 0.25rem;
+  }
+
+  .imagery-card-desc {
+    font-size: 12px;
+    color: var(--backdrop-taupe);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--focal-deep);
+    color: var(--backdrop-linen);
+    padding: 4rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--focal-tan);
+    font-family: var(--font-display);
+  }
+
+  .footer-tagline {
+    font-style: italic;
+    color: var(--focal-peach);
+    opacity: 0.7;
+    font-size: 14px;
+    margin-top: 0.5rem;
+  }
+
+  .footer-meta {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--backdrop-taupe);
+    text-align: right;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--backdrop-sand);
+    margin: 3rem 0;
+  }
+
+  /* LOGO USAGE */
+  .logo-usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .logo-usage-card {
+    border: 1px solid var(--backdrop-sand);
+    overflow: hidden;
+  }
+
+  .logo-usage-header {
+    padding: 0.75rem 1.25rem;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .logo-usage-card.approved .logo-usage-header {
+    background: var(--exposure-moss);
+    color: white;
+  }
+
+  .logo-usage-card.prohibited .logo-usage-header {
+    background: var(--exposure-rust);
+    color: white;
+  }
+
+  .logo-usage-body {
+    padding: 1.5rem;
+    background: var(--backdrop-white);
+  }
+
+  .logo-usage-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .logo-usage-list li {
+    font-size: 13px;
+    color: var(--backdrop-charcoal);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .logo-usage-card.approved .logo-usage-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--exposure-moss);
+  }
+
+  .logo-usage-card.prohibited .logo-usage-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--exposure-rust);
+  }
+
+  /* SVG logo mark inline */
+  .k-mark {
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .identity-grid { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .logo-usage-grid { grid-template-columns: 1fr; }
+    footer { padding: 3rem 1.5rem; }
+    .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Kairos Creative Studio</div>
+  <ul class="nav-links">
+    <li><a href="#identity">Identity</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#imagery">Imagery</a></li>
+    <li><a href="#dos-donts">Dos & Don'ts</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-label">Brand Guidelines — 2026</p>
+  <h1 class="hero-title">KAIROS</h1>
+  <p class="hero-subtitle">"Where creativity finds its moment."</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Studio</span>
+      <span class="hero-meta-value">Kairos Creative Studio</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Services</span>
+      <span class="hero-meta-value">Photography · Videography · Design</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Document</span>
+      <span class="hero-meta-value">Brand Guidelines v1.0</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND IDENTITY -->
+<section id="identity">
+  <p class="section-label">01 — Brand Identity</p>
+  <h2 class="section-title">Who we are</h2>
+  <div class="identity-grid">
+    <div class="identity-card">
+      <p class="identity-card-label">Brand Name</p>
+      <p class="identity-card-title">Kairos Creative Studio</p>
+      <p class="identity-card-content">From the ancient Greek — the perfect, decisive moment. Not just any moment, but the right one.</p>
+    </div>
+    <div class="identity-card">
+      <p class="identity-card-label">Tagline</p>
+      <p class="tagline">"Where creativity finds its moment."</p>
+    </div>
+    <div class="identity-card">
+      <p class="identity-card-label">Mission</p>
+      <p class="identity-card-content">To deliver purposeful, high-quality photography, videography, and design that brings every vision to life.</p>
+    </div>
+    <div class="identity-card">
+      <p class="identity-card-label">Vision</p>
+      <p class="identity-card-content">To become the world's leading platform for independent creatives — a space where talent is discovered, celebrated, and rewarded.</p>
+    </div>
+  </div>
+  <p class="identity-card-label" style="margin-bottom:1rem;">Services</p>
+  <div class="services-row">
+    <span class="service-pill">Photography — Film & Black and White</span>
+    <span class="service-pill">Videography — Film & Black and White</span>
+    <span class="service-pill">Design</span>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section id="story">
+  <p class="section-label">02 — Brand Story</p>
+  <h2 class="section-title">The Kairos narrative</h2>
+  <div class="story-text">
+    <p>Kairos. In ancient Greek, it means the perfect moment — the precise point in time where everything aligns. Not just any moment, but the right one.</p>
+    <p>That's what we built this studio around.</p>
+    <p>Kairos Creative Studio was born from a belief that creativity is most powerful when it's intentional. That every frame, every design, every edit deserves to be handled with care and purpose. We started small — a tight, passionate in-house team offering photography, videography, and design — because we believe that quality always comes before scale.</p>
+    <p>We shoot on film. We work in black and white. We design with purpose. Not because it's trendy, but because these are the tools that demand patience, craft, and attention — the very things that separate forgettable work from work that endures.</p>
+    <p>Your vision is always at the centre of what we do. We're not here to impose an aesthetic — we're here to find yours, refine it, and bring it to life in a way that feels true to you.</p>
+    <p>This is only the beginning. Kairos is growing — not just as a studio, but as a platform where creative talent is discovered, celebrated, and rewarded. A place where the right creatives find the right moments, every time.</p>
+    <p>Where creativity finds its moment.</p>
+  </div>
+</section>
+
+<!-- COLOR SYSTEM -->
+<section id="colors">
+  <p class="section-label">03 — Color System</p>
+  <h2 class="section-title">The palette</h2>
+  <p class="section-intro">Four color classes, each with a distinct role. Every color is warm, earthy, and intentional.</p>
+
+  <div class="color-class">
+    <div class="color-class-header">
+      <span class="color-class-name">Focal</span>
+      <span class="color-class-desc">Core colors</span>
+    </div>
+    <div class="color-swatches">
+      <div class="swatch" style="background:#6B4B3E">
+        <div class="swatch-info"><div class="swatch-hex">#6B4B3E</div><div class="swatch-name">Deep Brown</div></div>
+      </div>
+      <div class="swatch" style="background:#C49E85">
+        <div class="swatch-info"><div class="swatch-hex">#C49E85</div><div class="swatch-name">Warm Tan</div></div>
+      </div>
+      <div class="swatch" style="background:#FFD6AF">
+        <div class="swatch-info"><div class="swatch-hex">#FFD6AF</div><div class="swatch-name">Soft Peach</div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:0;margin-top:2px;">
+      <div style="flex:1;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#6B4B3E — Deep Brown</div>
+      <div style="flex:1;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#C49E85 — Warm Tan</div>
+      <div style="flex:1;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#FFD6AF — Soft Peach</div>
+    </div>
+  </div>
+
+  <div class="color-class">
+    <div class="color-class-header">
+      <span class="color-class-name">Undertone</span>
+      <span class="color-class-desc">Earthy Accents</span>
+    </div>
+    <div class="color-swatches">
+      <div class="swatch" style="background:#583E33"><div class="swatch-info"><div class="swatch-hex">#583E33</div><div class="swatch-name">Dark Espresso</div></div></div>
+      <div class="swatch" style="background:#614438"><div class="swatch-info"><div class="swatch-hex">#614438</div><div class="swatch-name">Rich Bark</div></div></div>
+      <div class="swatch" style="background:#FFDAB6"><div class="swatch-info"><div class="swatch-hex">#FFDAB6</div><div class="swatch-name">Light Apricot</div></div></div>
+      <div class="swatch" style="background:#FFDDBD"><div class="swatch-info"><div class="swatch-hex">#FFDDBD</div><div class="swatch-name">Warm Cream</div></div></div>
+      <div class="swatch" style="background:#FFE0C3"><div class="swatch-info"><div class="swatch-hex">#FFE0C3</div><div class="swatch-name">Pale Sand</div></div></div>
+      <div class="swatch" style="background:#FFE3C8"><div class="swatch-info"><div class="swatch-hex">#FFE3C8</div><div class="swatch-name">Blush Ivory</div></div></div>
+      <div class="swatch" style="background:#FFE6CD"><div class="swatch-info"><div class="swatch-hex">#FFE6CD</div><div class="swatch-name">Whisper Peach</div></div></div>
+    </div>
+  </div>
+
+  <div class="color-class">
+    <div class="color-class-header">
+      <span class="color-class-name">Exposure</span>
+      <span class="color-class-desc">Contrast Accents</span>
+    </div>
+    <div class="color-swatches">
+      <div class="swatch" style="background:#8B3A2A"><div class="swatch-info"><div class="swatch-hex">#8B3A2A</div><div class="swatch-name">Deep Rust</div></div></div>
+      <div class="swatch" style="background:#5C6B3A"><div class="swatch-info"><div class="swatch-hex">#5C6B3A</div><div class="swatch-name">Moss Green</div></div></div>
+      <div class="swatch" style="background:#B8860B"><div class="swatch-info"><div class="swatch-hex">#B8860B</div><div class="swatch-name">Warm Ochre</div></div></div>
+    </div>
+    <div style="display:flex;gap:0;margin-top:2px;">
+      <div style="flex:1;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#8B3A2A — Deep Rust</div>
+      <div style="flex:1;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#5C6B3A — Moss Green</div>
+      <div style="flex:1;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#B8860B — Warm Ochre</div>
+    </div>
+  </div>
+
+  <div class="color-class">
+    <div class="color-class-header">
+      <span class="color-class-name">Backdrop</span>
+      <span class="color-class-desc">Neutrals</span>
+    </div>
+    <div class="color-swatches">
+      <div class="swatch" style="background:#FAF7F2;border:1px solid #D9CFC0"><div class="swatch-info"><div class="swatch-hex">#FAF7F2</div><div class="swatch-name">Warm White</div></div></div>
+      <div class="swatch" style="background:#F0EAE0"><div class="swatch-info"><div class="swatch-hex">#F0EAE0</div><div class="swatch-name">Linen</div></div></div>
+      <div class="swatch" style="background:#D9CFC0"><div class="swatch-info"><div class="swatch-hex">#D9CFC0</div><div class="swatch-name">Warm Sand</div></div></div>
+      <div class="swatch" style="background:#8C7B6B"><div class="swatch-info"><div class="swatch-hex">#8C7B6B</div><div class="swatch-name">Warm Taupe</div></div></div>
+      <div class="swatch" style="background:#3D3028"><div class="swatch-info"><div class="swatch-hex">#3D3028</div><div class="swatch-name">Warm Charcoal</div></div></div>
+    </div>
+    <div style="display:flex;gap:0;margin-top:2px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:140px;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#FAF7F2 — Warm White · Page bg</div>
+      <div style="flex:1;min-width:140px;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#F0EAE0 — Linen · Surface</div>
+      <div style="flex:1;min-width:140px;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#D9CFC0 — Warm Sand · Borders</div>
+      <div style="flex:1;min-width:140px;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#8C7B6B — Warm Taupe · Secondary text</div>
+      <div style="flex:1;min-width:140px;padding:0.75rem 1rem;background:var(--backdrop-white);border:1px solid var(--backdrop-sand);font-size:12px;color:var(--backdrop-taupe);">#3D3028 — Warm Charcoal · Primary text</div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="typography">
+  <p class="section-label">04 — Typography</p>
+  <h2 class="section-title">Type system</h2>
+  <p class="section-intro">Array carries the brand's bold, geometric character. Consolas brings warmth and craft to every word.</p>
+
+  <table class="type-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Font</th>
+        <th>Size</th>
+        <th>Weight</th>
+        <th>Style</th>
+        <th>Preview</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Display</td>
+        <td>Array</td>
+        <td>64px</td>
+        <td>Bold Wide</td>
+        <td>Normal</td>
+        <td><span class="type-preview display" style="font-size:2rem;font-weight:700;">KAIROS</span></td>
+      </tr>
+      <tr>
+        <td>H1</td>
+        <td>Array</td>
+        <td>48px</td>
+        <td>Bold</td>
+        <td>Normal</td>
+        <td><span class="type-preview" style="font-size:1.6rem;font-weight:700;">Where creativity finds its moment</span></td>
+      </tr>
+      <tr>
+        <td>H2</td>
+        <td>Array</td>
+        <td>36px</td>
+        <td>Bold</td>
+        <td>Normal</td>
+        <td><span class="type-preview" style="font-size:1.3rem;font-weight:700;">Our Services</span></td>
+      </tr>
+      <tr>
+        <td>H3</td>
+        <td>Array</td>
+        <td>28px</td>
+        <td>Bold</td>
+        <td>Normal</td>
+        <td><span class="type-preview" style="font-size:1.1rem;font-weight:700;">Photography & Videography</span></td>
+      </tr>
+      <tr>
+        <td>H4</td>
+        <td>Array</td>
+        <td>22px</td>
+        <td>Bold</td>
+        <td>Normal</td>
+        <td><span class="type-preview" style="font-size:1rem;font-weight:700;">Film & Black and White</span></td>
+      </tr>
+      <tr>
+        <td>Body Large</td>
+        <td>Consolas</td>
+        <td>18px</td>
+        <td>Regular</td>
+        <td>Normal</td>
+        <td><span style="font-size:15px;font-family:var(--font-body);color:var(--backdrop-charcoal);">We are rooted in craft and intention.</span></td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Consolas</td>
+        <td>16px</td>
+        <td>Regular</td>
+        <td>Normal</td>
+        <td><span style="font-size:13px;font-family:var(--font-body);color:var(--backdrop-charcoal);">Every project is handled with purpose and care.</span></td>
+      </tr>
+      <tr>
+        <td>Body Small</td>
+        <td>Consolas</td>
+        <td>14px</td>
+        <td>Regular</td>
+        <td>Normal</td>
+        <td><span style="font-size:12px;font-family:var(--font-body);color:var(--backdrop-taupe);">Available for bookings via WhatsApp or Discord.</span></td>
+      </tr>
+      <tr>
+        <td>Quote</td>
+        <td>Consolas</td>
+        <td>16px</td>
+        <td>Regular</td>
+        <td>Italic</td>
+        <td><span style="font-size:13px;font-family:var(--font-body);font-style:italic;color:var(--focal-deep);">"The right moment captured is worth a thousand words."</span></td>
+      </tr>
+      <tr>
+        <td>Caption</td>
+        <td>Consolas</td>
+        <td>12px</td>
+        <td>Bold</td>
+        <td>Italic</td>
+        <td><span style="font-size:11px;font-family:var(--font-body);font-weight:700;font-style:italic;color:var(--backdrop-taupe);">Shot on 35mm film — Kairos Creative Studio</span></td>
+      </tr>
+      <tr>
+        <td>Monospace / Label</td>
+        <td>Consolas</td>
+        <td>13px</td>
+        <td>Regular</td>
+        <td>Normal</td>
+        <td><span style="font-size:11px;font-family:var(--font-body);color:var(--backdrop-taupe);background:var(--backdrop-linen);padding:3px 8px;">BOOKING_REF_2024</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- LOGO -->
+<section id="logo">
+  <p class="section-label">05 — Logo System</p>
+  <h2 class="section-title">Logo & lockups</h2>
+  <p class="section-intro">The Kairos logomark is a geometric K — clean, intentional, and timeless. It may be used across five approved lockup configurations.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card">
+      <img src="https://i.ibb.co/sJtdkkgR/Logomark.webp" alt="Kairos Logomark" style="height:80px;object-fit:contain;"/>
+      <p class="logo-card-label">Logomark — Full color</p>
+    </div>
+    <div class="logo-card dark">
+      <img src="https://i.ibb.co/F43G101Z/Logomark-Inverted.webp" alt="Kairos Logomark Inverted" style="height:80px;object-fit:contain;"/>
+      <p class="logo-card-label white" style="color:rgba(255,255,255,0.6);">Logomark — Reversed</p>
+    </div>
+    <!-- <div class="logo-card charcoal">
+      <img src="https://i.ibb.co/sJtdkkgR/Logomark.webp" alt="Kairos Logomark on dark" style="height:80px;object-fit:contain;filter:brightness(0) invert(1);"/>
+      <p class="logo-card-label" style="color:rgba(255,255,255,0.4);">Logomark — On dark</p>
+    </div> -->
+    <div class="logo-card">
+      <img src="https://i.ibb.co/6JBHK9JC/Logomark-AIROS.webp" alt="Kairos Horizontal Lockup" style="height:60px;object-fit:contain;"/>
+      <p class="logo-card-label">Horizontal lockup</p>
+    </div>
+    <div class="logo-card">
+      <img src="https://i.ibb.co/B5ZX8gTg/Logomark-AIROS-Creative-Studio-Under.webp" alt="Kairos Stacked Full" style="height:100px;object-fit:contain;"/>
+      <p class="logo-card-label">Stacked — Full</p>
+    </div>
+    <div class="logo-card">
+      <img src="../Logos/Logomark + KAIROS underneath.jpg" alt="Kairos Stacked Condensed" style="height:80px;object-fit:contain;"/>
+      <p class="logo-card-label">Stacked — Condensed</p>
+    </div>
+    <div class="logo-card" style="grid-column: span 2;">
+      <img src="https://i.ibb.co/gFRVRgZX/Logomark-AIROS-where-creativity-finds-its-moment-underneath.webp" alt="Kairos Tagline Asset" style="height:80px;object-fit:contain;"/>
+      <p class="logo-card-label">Tagline asset</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label" style="margin-bottom:1rem;">Logo usage rules</p>
+  <div class="logo-usage-grid">
+    <div class="logo-usage-card approved">
+      <div class="logo-usage-header">Approved</div>
+      <div class="logo-usage-body">
+        <ul class="logo-usage-list">
+          <li>Use only approved logo variants and lockups</li>
+          <li>Place on approved background colors from the Backdrop class</li>
+          <li>Maintain proportions at all times</li>
+          <li>Use full color variant on light backgrounds</li>
+          <li>Use reversed variant on Warm Tan backgrounds</li>
+          <li>Give the logo adequate breathing room at all times</li>
+        </ul>
+      </div>
+    </div>
+    <div class="logo-usage-card prohibited">
+      <div class="logo-usage-header">Prohibited</div>
+      <div class="logo-usage-body">
+        <ul class="logo-usage-list">
+          <li>Stretch or distort the logo in any direction</li>
+          <li>Place on busy, cluttered, or clashing backgrounds</li>
+          <li>Add effects such as shadows, glows, or gradients</li>
+          <li>Rearrange or reorder logo elements</li>
+          <li>Use unapproved color variants</li>
+          <li>Reproduce at sizes too small to be legible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND VOICE -->
+<section id="voice">
+  <p class="section-label">06 — Brand Voice & Tone</p>
+  <h2 class="section-title">How Kairos speaks</h2>
+  <p class="section-intro">Kairos speaks with warmth, intention, and clarity. Every word is considered. Every message puts the client at the centre.</p>
+
+  <div class="voice-grid">
+    <div class="voice-card">
+      <p class="voice-card-title">Voice Pillars</p>
+      <p class="voice-card-content">Warm & personal. Professional & polished. Kairos speaks to people, not at them — always with care and purpose.</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Perspective</p>
+      <p class="voice-card-content">Primarily second person — your vision, your moment. We bring our own voice in where it feels natural, but the client is always at the centre of the story.</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Emoji Usage</p>
+      <p class="voice-card-content">Emojis are welcome and encouraged, particularly on Instagram and in booking confirmations. Use them to add warmth, never as a substitute for clear communication.</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Opening</p>
+      <p class="voice-card-content">Always open casually and by name. <em>Hey [Name]</em> — not Dear Client, not Hi there.</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Writing Length</p>
+      <p class="voice-card-content">Balanced. Short and punchy for social. Detailed and considered for emails. Every word earns its place.</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Never Sounds</p>
+      <p class="voice-card-content">Overly corporate. Slangy or too casual. Pushy or salesy. Vague or uncommitted.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="section-label" style="margin-bottom:1.5rem;">Voice by touchpoint</p>
+  <div class="touchpoint-grid">
+    <div class="touchpoint-card">
+      <p class="touchpoint-label">Instagram</p>
+      <p class="touchpoint-title">Short. Evocative. Human.</p>
+      <p class="touchpoint-example">Your moment, captured exactly as it should be. 📷 Film · Black & White · Design — link in bio to book yours.</p>
+    </div>
+    <div class="touchpoint-card">
+      <p class="touchpoint-label">Website Copy</p>
+      <p class="touchpoint-title">Concise but complete.</p>
+      <p class="touchpoint-example">Every project starts with your vision. We refine it, shape it, and bring it to life — one intentional frame at a time.</p>
+    </div>
+    <div class="touchpoint-card">
+      <p class="touchpoint-label">Booking Confirmation</p>
+      <p class="touchpoint-title">Warm. Clear. Reassuring.</p>
+      <p class="touchpoint-example">Hey [Name] — you're booked in! 🎉 Here are your details. We can't wait to bring your vision to life.</p>
+    </div>
+    <div class="touchpoint-card">
+      <p class="touchpoint-label">Invoices & Quotes</p>
+      <p class="touchpoint-title">Direct. Professional. No fluff.</p>
+      <p class="touchpoint-example">Hey [Name], here's your quote for [project]. Everything's broken down clearly below — just let us know if you have any questions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGERY -->
+<section id="imagery">
+  <p class="section-label">07 — Imagery Guidelines</p>
+  <h2 class="section-title">Visual language</h2>
+  <p class="section-intro">Kairos imagery is rooted in people, craft, and authenticity. Every image should feel like it was made, not manufactured.</p>
+
+  <div class="imagery-grid">
+    <div class="imagery-card">
+      <div class="imagery-swatch" style="background:#3D3028;">
+        <span class="imagery-swatch-label" style="color:#8C7B6B;">GRAIN</span>
+      </div>
+      <div class="imagery-card-body">
+        <p class="imagery-card-title">Film & Grain</p>
+        <p class="imagery-card-desc">Textured, organic, timeless. Grain is not a flaw — it's a fingerprint of the craft.</p>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-swatch" style="background:#1A1510;">
+        <span class="imagery-swatch-label" style="color:#5A5550;">B&W</span>
+      </div>
+      <div class="imagery-card-body">
+        <p class="imagery-card-title">High Contrast B&W</p>
+        <p class="imagery-card-desc">Bold, dramatic, emotionally charged. Black and white strips away distraction and reveals truth.</p>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-swatch" style="background:#C49E85;">
+        <span class="imagery-swatch-label" style="color:#8B6B55;">WARM</span>
+      </div>
+      <div class="imagery-card-body">
+        <p class="imagery-card-title">Warm & Golden Toned</p>
+        <p class="imagery-card-desc">Inviting, human, alive. Color treated to sit within the Focal palette at all times.</p>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-swatch" style="background:#FAF7F2;border:1px solid #D9CFC0;">
+        <span class="imagery-swatch-label" style="color:#D9CFC0;">MINIMAL</span>
+      </div>
+      <div class="imagery-card-body">
+        <p class="imagery-card-title">Clean & Minimal</p>
+        <p class="imagery-card-desc">Intentional, uncluttered, purposeful. Let the subject breathe.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rules-grid">
+    <div class="rules-col do">
+      <h3>Imagery Do</h3>
+      <ul class="rules-list">
+        <li>Feature people — candid or directed, always genuine</li>
+        <li>Treat all imagery to sit within the Kairos brand palette</li>
+        <li>Let grain, warmth, and texture speak for themselves</li>
+        <li>Keep compositions intentional and uncluttered</li>
+        <li>Allow for candid, spontaneous moments alongside directed shots</li>
+      </ul>
+    </div>
+    <div class="rules-col dont">
+      <h3>Imagery Don't</h3>
+      <ul class="rules-list">
+        <li>Use heavily filtered stock images</li>
+        <li>Feature busy or cluttered compositions</li>
+        <li>Use imagery that looks overly staged or artificial</li>
+        <li>Use imagery that feels generic or could belong to any brand</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DOS & DONTS -->
+<section id="dos-donts">
+  <p class="section-label">08 — Brand Dos & Don'ts</p>
+  <h2 class="section-title">The rules of Kairos</h2>
+  <p class="section-intro">These rules exist to protect the integrity of the brand across every touchpoint, every time.</p>
+
+  <div class="rules-grid">
+    <div class="rules-col do">
+      <h3>Do</h3>
+      <ul class="rules-list">
+        <li>Use only approved logo variants and colour combinations</li>
+        <li>Stay within the Focal, Undertone, Exposure, and Backdrop color classes</li>
+        <li>Let imagery breathe — white space and minimal compositions are your friend</li>
+        <li>Write in second person, keeping the client at the centre</li>
+        <li>Use emojis where they add warmth, not noise</li>
+        <li>Let the grain, warmth, and texture of film photography speak for itself</li>
+        <li>Keep communications casual but considered — Hey [Name], not Dear Sir</li>
+        <li>Use Array for all display and heading text</li>
+        <li>Use Consolas for all body, caption, and monospace text</li>
+      </ul>
+    </div>
+    <div class="rules-col dont">
+      <h3>Don't</h3>
+      <ul class="rules-list">
+        <li>Use colours outside the approved palette</li>
+        <li>Place the logo on busy, cluttered, or clashing backgrounds</li>
+        <li>Stretch, distort, or add effects to the logo</li>
+        <li>Use stock imagery that feels heavily filtered or artificial</li>
+        <li>Write in a corporate, stiff, or salesy tone</li>
+        <li>Mix typefaces outside of Array and Consolas</li>
+        <li>Use unapproved logo colour variants</li>
+        <li>Let compositions feel cluttered or overly staged</li>
+        <li>Be vague — every word should earn its place</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <p class="footer-brand">KAIROS</p>
+    <p class="footer-tagline">"Where creativity finds its moment."</p>
+  </div>
+  <div class="footer-meta">
+    <p>Kairos Creative Studio</p>
+    <p style="margin-top:0.5rem;">Brand Guidelines v1.0 — 2026</p>
+    <p style="margin-top:0.5rem;">Photography · Videography · Design</p>
+  </div>
+</footer>
+
+</body>
+</html>
